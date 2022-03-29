@@ -31,7 +31,7 @@ describe BankAccount do
     expect(checking.balance).to eq 195.0
   end
 
-  xit '5. cannot overdraw account' do
+  it '5. cannot overdraw account' do
     checking = BankAccount.new(123, '0987', 250.0)
     checking.withdraw(255.0)
     expect(checking.balance).to eq 250.0
@@ -39,7 +39,7 @@ describe BankAccount do
     savings = BankAccount.new(567, '2468', 500.0)
     savings.withdraw(200.0)
     savings.withdraw(200.0)
-    savings.withdraw(200.0)
+    savings.withdraw(200.0) # would overdraft
     expect(savings.balance).to eq 100.0
   end
 
