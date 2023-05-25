@@ -8,8 +8,8 @@ class BankAccount  attr_reader :account_number,
     @balance = balance
   end
 
-  def deposit(amount)
-    @balance += amount
+  def deposit(dollars)
+    @balance += dollars
   end
 
   def withdraw(amount)
